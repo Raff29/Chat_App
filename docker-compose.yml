@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  server:
+    image: mono:latest
+    container_name: server
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/Raphael/Desktop/U of S/2nd year/Winter 2022/CMPT 436/Assignments/Assignment2/MultiRoom Chat/Server:/code
+    command: >
+      bash -c "csc /code/Server.cs && mono Server.exe"
+
+
+  client:
+    image: mono:latest
+    container_name: client
+    ports:
+      - "8081:8002"
+    volumes:
+      - /Users/Raphael/Desktop/U of S/2nd year/Winter 2022/CMPT 436/Assignments/Assignment2/MultiRoom Chat/Client:/code
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+    command: >
+      bash -c "csc /code/Client.cs && /bin/bash"
+
