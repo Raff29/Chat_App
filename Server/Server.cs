@@ -112,10 +112,7 @@ namespace backend
                         stream.Write(msg, 0, msg.Length);
                         client.Close();
                     }
-
-                  
                 }
-
             }
             catch (SocketException e)
             {
@@ -126,9 +123,6 @@ namespace backend
                 // Stop listening for new clients.
                 server.Stop();
             }
-
-
-            
         }
     }
 
@@ -221,15 +215,7 @@ namespace backend
 
                                         }
                                     }
-
-
-
                                 }
-
-
-
-
-
                             }
                         }
 
@@ -310,7 +296,6 @@ namespace backend
                                     else
                                     {
 
-
                                         data = data.Remove(0, 4);
                                         data = this.clientname + ": " + data;
                                         temp.AddMessage(data);
@@ -327,15 +312,7 @@ namespace backend
 
                                             }
                                         }
-
-
-
                                     }
-
-
-
-
-
                                 }
                             }
 
@@ -345,8 +322,6 @@ namespace backend
                                 byte[] b = System.Text.Encoding.ASCII.GetBytes("InValid Room");
                                 stream.Write(b, 0, b.Length);
                             }
-
-
                         }
 
                         else
@@ -357,14 +332,7 @@ namespace backend
                             break;
                         }
 
-                          
-                        
                     }
-                    //else
-                    //{
-                    //    Server.user_count -= 1;
-                    //    break;
-                    //}
                 }
 
                 catch (Exception ex)
@@ -383,12 +351,7 @@ namespace backend
                     Server.user_count -= 1;
                     Console.WriteLine(Server.user_count);
                 }
-
-
             }
-
         }
     }
-           
- 
 }

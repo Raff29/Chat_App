@@ -1,11 +1,9 @@
-### run the porject
+# Make sure to change Volume path in docker-compose.yml file
 
-```
-docker-compose up -d
-```
+## run the porject
 
-### connect clinet with server
+```docker-compose up -d```
 
-```
-docker-compose exec client mono Client.exe
-```
+## connect clinet with server
+
+```docker-compose exec client mono Client.exe```

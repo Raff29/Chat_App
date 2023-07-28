@@ -52,10 +52,7 @@ namespace Client
                 {
                     client.Close();
                 }
-
             }
-
-           // Console.WriteLine("out of");
         }
 
         public bool getValidroom()
@@ -71,13 +68,11 @@ namespace Client
             Int32 port = 8080;
             NetworkStream stream = null;
             TcpClient client = null;
-            //string localAddressString = localAddr.ToString();
 
             try
             {
 
                 client = new TcpClient("server", port);
-                // Console.WriteLine(client);
                 stream = client.GetStream();
                 Byte[] d = new Byte[1024];
                 Int32 bytes = stream.Read(d, 0, d.Length);
@@ -113,8 +108,6 @@ namespace Client
                             stream.Write(data, 0, data.Length);
 
                             data = new Byte[256];
-
-                          
                          
                             while(inRoom)
                             {
@@ -140,10 +133,7 @@ namespace Client
                                     inRoom = false;
                                     break;
                                 }
-
                             }
-
-                            
                         }
 
                         else if (choice == "2")
@@ -169,7 +159,6 @@ namespace Client
                             if (h.getValidroom())
                             {
 
-                                
                                 bool inRoom = true;
                                 while (inRoom)
                                 {
@@ -194,7 +183,6 @@ namespace Client
                                         stream.Write(data, 0, data.Length);
                                         inRoom = false;
                                     }
-
                                 }
                             }
                             else
@@ -214,10 +202,7 @@ namespace Client
 
                         Console.WriteLine("\n");
                     }
-
                 }
-          
-              
             }
 
             catch (Exception e)

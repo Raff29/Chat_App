@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /Users/Raphael/Desktop/U of S/2nd year/Winter 2022/CMPT 436/Assignments/Assignment2/MultiRoom Chat/Server:/code
+     - C:/Users/Raphael/Desktop/dev_stuff/Chat_App/Server:/code
     command: >
       bash -c "csc /code/Server.cs && mono Server.exe"
 
@@ -17,7 +17,7 @@ services:
     ports:
       - "8081:8002"
     volumes:
-      - /Users/Raphael/Desktop/U of S/2nd year/Winter 2022/CMPT 436/Assignments/Assignment2/MultiRoom Chat/Client:/code
+      - C:/Users/Raphael/Desktop/dev_stuff/Chat_App/Client:/code
     stdin_open: true
     tty: true
     depends_on:
